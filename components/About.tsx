@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import SectionContainer from "./SectionContainer";
 import { personal } from "@/lib/data";
@@ -20,73 +21,89 @@ export default function About() {
       subtitle="Driven by curiosity and the conviction that understanding immune-tumor crosstalk will unlock transformative cancer therapies."
     >
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
-        {/* ── Left: Photo + Quick Info ─────────────────────────────── */}
+        {/* ── Left: Photos + Quick Info ─────────────────────────────── */}
         <motion.div
           variants={slideInLeft}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="lg:col-span-2 space-y-6"
+          className="lg:col-span-2 space-y-5"
         >
-          {/* Photo placeholder */}
+          {/* Main profile photo — lab coat selfie */}
           <div className="relative">
             <div
               className="w-full aspect-[4/5] rounded-2xl overflow-hidden relative"
               style={{
-                background: "linear-gradient(145deg, #F3E8FF 0%, #DCEEFF 50%, #DFF5EA 100%)",
-                border: "1px solid rgba(232,232,244,0.8)",
-                boxShadow: "0 16px 48px rgba(124,110,230,0.14), 0 4px 16px rgba(0,0,0,0.06)",
+                boxShadow: "0 16px 48px rgba(124,110,230,0.18), 0 4px 16px rgba(0,0,0,0.08)",
+                border: "1px solid rgba(232,232,244,0.6)",
               }}
             >
-              {/* Decorative academic portrait placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center space-y-3">
-                  <div
-                    className="w-24 h-24 rounded-full mx-auto flex items-center justify-center text-3xl font-serif font-bold text-white"
-                    style={{
-                      background: "linear-gradient(135deg, #7C6EE6 0%, #6BA8FF 100%)",
-                      boxShadow: "0 8px 24px rgba(124,110,230,0.35)",
-                    }}
-                  >
-                    AG
-                  </div>
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-[#9CA3AF]">
-                    Photo Placeholder
-                  </p>
-                </div>
-              </div>
-              {/* Pattern overlay */}
+              <Image
+                src="/images/ahana-profile.jpg"
+                alt="Ahana Ghosh at the Beatson Institute for Cancer Research"
+                fill
+                className="object-cover object-top"
+                priority
+                sizes="(max-width: 768px) 100vw, 420px"
+              />
+              {/* Subtle gradient overlay at bottom */}
               <div
-                className="absolute inset-0 opacity-[0.04]"
+                className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
                 style={{
-                  backgroundImage:
-                    "radial-gradient(circle, #7C6EE6 1px, transparent 1px)",
-                  backgroundSize: "20px 20px",
+                  background:
+                    "linear-gradient(to top, rgba(10,8,34,0.55) 0%, transparent 100%)",
                 }}
               />
+              {/* Beatson badge at bottom of photo */}
+              <div className="absolute bottom-3 left-3 right-3">
+                <p className="font-mono text-[9px] uppercase tracking-widest text-white/75 font-semibold">
+                  Beatson Institute for Cancer Research
+                </p>
+                <p className="text-white/55 text-[9px] font-mono mt-0.5">
+                  University of Glasgow
+                </p>
+              </div>
             </div>
 
-            {/* Floating institution badge */}
+            {/* Glasgow campus photo — floating thumbnail */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.88, y: 12 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={viewportOnce}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="absolute -bottom-5 -right-4 glass rounded-xl px-4 py-3 shadow-soft-lg"
-              style={{ border: "1px solid rgba(255,255,255,0.7)" }}
+              transition={{ delay: 0.5, duration: 0.55, ease: [0.34, 1.56, 0.64, 1] }}
+              className="absolute -bottom-6 -right-4 rounded-xl overflow-hidden"
+              style={{
+                width: "118px",
+                height: "118px",
+                border: "3px solid rgba(255,255,255,0.9)",
+                boxShadow:
+                  "0 8px 28px rgba(124,110,230,0.22), 0 2px 8px rgba(0,0,0,0.12)",
+              }}
             >
-              <p className="font-mono text-[10px] uppercase tracking-widest text-[#7C6EE6] font-semibold">
-                Institution
-              </p>
-              <p className="text-[#1A1A2E] text-sm font-bold leading-tight mt-0.5">
-                Glasgow
-              </p>
-              <p className="text-[#9CA3AF] text-[10px]">School of Infection & Immunity</p>
+              <Image
+                src="/images/ahana-glasgow.jpg"
+                alt="Ahana at the University of Glasgow"
+                fill
+                className="object-cover object-top"
+                sizes="118px"
+              />
+              {/* Caption overlay */}
+              <div
+                className="absolute bottom-0 left-0 right-0 px-1.5 py-1"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(10,8,34,0.75), transparent)",
+                }}
+              >
+                <p className="font-mono text-[7px] uppercase tracking-wider text-white/80 text-center">
+                  Glasgow
+                </p>
+              </div>
             </motion.div>
           </div>
 
           {/* Quick info cards */}
-          <div className="grid grid-cols-2 gap-3 pt-4">
+          <div className="grid grid-cols-2 gap-2.5 pt-4">
             {[
               { label: "Degree", value: "PhD Candidate", color: "violet" },
               { label: "Program", value: "Biomedical Sci.", color: "sky" },
@@ -192,7 +209,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Timeline: Education */}
+          {/* Education */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -207,7 +224,7 @@ export default function About() {
               </h3>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               {[
                 {
                   degree: "PhD, Biomedical Sciences",
@@ -242,7 +259,7 @@ export default function About() {
                     className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
                     style={{ background: edu.color }}
                   />
-                  <div className="min-w-0">
+                  <div className="min-w-0 flex-1">
                     <p className="font-sans font-bold text-[#1A1A2E] text-sm leading-tight">
                       {edu.degree}
                     </p>
@@ -252,12 +269,12 @@ export default function About() {
                     >
                       {edu.institution}
                     </p>
-                    <div className="flex items-center gap-3 mt-1.5">
+                    <div className="flex items-center gap-3 mt-1.5 flex-wrap">
                       <span className="font-mono text-[10px] text-[#9CA3AF]">
                         {edu.period}
                       </span>
                       <span className="w-1 h-1 rounded-full bg-[#E8E8F4]" />
-                      <span className="text-[#9CA3AF] text-[10px] truncate">
+                      <span className="text-[#9CA3AF] text-[10px]">
                         {edu.focus}
                       </span>
                     </div>
