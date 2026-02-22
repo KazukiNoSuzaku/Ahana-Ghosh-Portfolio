@@ -12,9 +12,9 @@ export const personal = {
 With expertise spanning wet lab techniques, bioinformatics, and advanced microscopy, I am committed to bridging molecular discoveries with clinical relevance — ultimately contributing to the next generation of precision cancer treatments.`,
   bioShort:
     "PhD researcher in Biomedical Sciences specializing in Cancer Immunology, tumor microenvironment biology, and translational oncology.",
-  institution: "Johns Hopkins University",
-  department: "Department of Biomedical Sciences",
-  email: "ahana.ghosh@jhu.edu",
+  institution: "University of Glasgow",
+  department: "School of Infection & Immunity",
+  email: "ahana.ghosh@glasgow.ac.uk",
   linkedin: "https://linkedin.com/in/ahana-ghosh",
   googleScholar: "https://scholar.google.com/citations?user=placeholder",
   researchGate: "https://researchgate.net/profile/Ahana-Ghosh",
@@ -34,8 +34,8 @@ export const researchExperiences = [
     id: "r1",
     title: "Graduate Research Fellow",
     lab: "Tumor Immunology & Checkpoint Biology Lab",
-    institution: "Johns Hopkins School of Medicine",
-    location: "Baltimore, MD",
+    institution: "University of Glasgow",
+    location: "Glasgow, UK",
     duration: "Aug 2021 – Present",
     type: "PhD Research",
     description:

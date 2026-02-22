@@ -79,9 +79,9 @@ export default function About() {
                 Institution
               </p>
               <p className="text-[#1A1A2E] text-sm font-bold leading-tight mt-0.5">
-                Johns Hopkins
+                Glasgow
               </p>
-              <p className="text-[#9CA3AF] text-[10px]">School of Medicine</p>
+              <p className="text-[#9CA3AF] text-[10px]">School of Infection & Immunity</p>
             </motion.div>
           </div>
 
@@ -211,7 +211,7 @@ export default function About() {
               {[
                 {
                   degree: "PhD, Biomedical Sciences",
-                  institution: "Johns Hopkins University",
+                  institution: "University of Glasgow",
                   period: "2021 – Present",
                   focus: "Cancer Immunology & Tumor Microenvironment",
                   color: "#7C6EE6",
