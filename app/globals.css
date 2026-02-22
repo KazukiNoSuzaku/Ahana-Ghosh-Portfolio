@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom Properties ─────────────────────────────────────────────── */
+:root {
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-jetbrains: "JetBrains Mono", monospace;
+}
+
+/* ── Base Reset & Body ─────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FAFAFF;
+    color: #1A1A2E;
+    font-family: var(--font-inter), system-ui, sans-serif;
+    line-height: 1.7;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Smooth scroll offset for fixed navbar */
+  section[id] {
+    scroll-margin-top: 80px;
+  }
+
+  /* Focus ring */
+  *:focus-visible {
+    outline: 2px solid #7C6EE6;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Text selection */
+  ::selection {
+    background: rgba(124, 110, 230, 0.2);
+    color: #1A1A2E;
+  }
+}
+
+/* ── Utility Components ─────────────────────────────────────────────── */
+@layer components {
+  /* Container */
+  .container-portfolio {
+    @apply max-w-[1280px] mx-auto px-6 md:px-8 lg:px-12;
+  }
+
+  /* Section wrapper */
+  .section-wrapper {
+    @apply py-20 md:py-24 lg:py-[6rem];
+  }
+
+  /* Section header */
+  .section-eyebrow {
+    @apply font-mono text-sm uppercase tracking-[0.1em] font-medium;
+    color: #7C6EE6;
+  }
+
+  .section-title {
+    @apply font-serif font-bold tracking-tight text-[#1A1A2E];
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+  }
+
+  .section-subtitle {
+    @apply text-[#6B7280] leading-relaxed;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #7C6EE6 0%, #6BA8FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 font-sans font-semibold text-white rounded-full;
+    @apply px-7 py-3.5 text-sm tracking-wide;
+    background: linear-gradient(135deg, #7C6EE6 0%, #6BA8FF 100%);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(124, 110, 230, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 28px rgba(124, 110, 230, 0.45);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 font-sans font-semibold rounded-full;
+    @apply px-7 py-3.5 text-sm tracking-wide;
+    color: #7C6EE6;
+    border: 2px solid #7C6EE6;
+    background: transparent;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-secondary:hover {
+    background: #E6E6FA;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(124, 110, 230, 0.15);
+  }
+
+  .btn-secondary:active {
+    transform: translateY(0);
+  }
+
+  /* Card base */
+  .card {
+    @apply bg-white rounded-xl border border-[#E8E8F4];
+    box-shadow: 0 2px 8px rgba(124, 110, 230, 0.08), 0 1px 4px rgba(0,0,0,0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(124, 110, 230, 0.18), 0 4px 16px rgba(0,0,0,0.06);
+  }
+
+  /* Tag/Badge */
+  .tag {
+    @apply inline-flex items-center font-sans font-medium rounded-full;
+    @apply px-3 py-1 text-xs tracking-wide uppercase;
+  }
+
+  .tag-violet {
+    @apply tag;
+    background: rgba(124, 110, 230, 0.1);
+    color: #7C6EE6;
+  }
+
+  .tag-blue {
+    @apply tag;
+    background: rgba(107, 168, 255, 0.12);
+    color: #4B88DF;
+  }
+
+  .tag-mint {
+    @apply tag;
+    background: #DFF5EA;
+    color: #1a7a4a;
+  }
+
+  .tag-peach {
+    @apply tag;
+    background: #FFE5D9;
+    color: #c05621;
+  }
+
+  .tag-lavender {
+    @apply tag;
+    background: #E6E6FA;
+    color: #5c52b8;
+  }
+
+  .tag-sky {
+    @apply tag;
+    background: #DCEEFF;
+    color: #2563eb;
+  }
+
+  /* Divider accent */
+  .accent-divider {
+    @apply w-16 h-1 rounded-full;
+    background: linear-gradient(135deg, #7C6EE6 0%, #6BA8FF 100%);
+  }
+
+  /* Glassmorphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  /* Frosted navbar */
+  .navbar-frosted {
+    background: rgba(250, 250, 255, 0.88);
+    backdrop-filter: blur(20px) saturate(1.8);
+    -webkit-backdrop-filter: blur(20px) saturate(1.8);
+    border-bottom: 1px solid rgba(232, 232, 244, 0.7);
+  }
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAFAFF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 110, 230, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 110, 230, 0.45);
+}
+
+/* ── Animated gradient background ──────────────────────────────────── */
+.hero-gradient {
+  background: linear-gradient(135deg, #FAFAFF 0%, #F3E8FF 45%, #DCEEFF 100%);
+}
+
+/* ── Decorative blob shapes ─────────────────────────────────────────── */
+.blob-violet {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 40%, rgba(124,110,230,0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.blob-blue {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, rgba(107,168,255,0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* ── Section gradient alternates ───────────────────────────────────── */
+.section-alt {
+  background: linear-gradient(135deg, #F0FBF4 0%, #EFF6FF 100%);
+}
+
+/* ── Timeline connector ─────────────────────────────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 24px;
+  top: 48px;
+  bottom: -24px;
+  width: 2px;
+  background: linear-gradient(to bottom, #7C6EE6, #6BA8FF, transparent);
+  border-radius: 9999px;
+}
