@@ -229,8 +229,8 @@ export default function About() {
                 {
                   degree: "PhD, MRC DTP Precision Medicine",
                   institution: "University of Glasgow",
-                  period: "2021 – Present",
-                  focus: "Cancer Immunology & Tumor Microenvironment",
+                  period: "Starting Sep 2026",
+                  focus: "",
                   color: "#7C6EE6",
                   bg: "rgba(124,110,230,0.06)",
                 },
