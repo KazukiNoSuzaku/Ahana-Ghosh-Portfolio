@@ -4,25 +4,28 @@ import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 
 // Dynamic import — disables SSR for Three.js canvas
-const RNAModel = dynamic(() => import("./RNAModel"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center">
-      <div className="flex flex-col items-center gap-3">
-        <div
-          className="w-10 h-10 rounded-full border-2 border-t-transparent animate-spin"
-          style={{ borderColor: "#7C6EE6", borderTopColor: "transparent" }}
-        />
-        <p
-          className="font-mono text-[10px] uppercase tracking-widest"
-          style={{ color: "#9B8EF0" }}
-        >
-          Loading RNA model…
-        </p>
+const CancerImmunologyModel = dynamic(
+  () => import("./CancerImmunologyModel"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="flex flex-col items-center gap-3">
+          <div
+            className="w-10 h-10 rounded-full border-2 border-t-transparent animate-spin"
+            style={{ borderColor: "#7C6EE6", borderTopColor: "transparent" }}
+          />
+          <p
+            className="font-mono text-[10px] uppercase tracking-widest"
+            style={{ color: "#9B8EF0" }}
+          >
+            Loading model…
+          </p>
+        </div>
       </div>
-    </div>
-  ),
-});
+    ),
+  }
+);
 
 export default function SplinePlaceholder() {
   return (
@@ -67,30 +70,30 @@ export default function SplinePlaceholder() {
           }}
         />
 
-        {/* Three.js RNA canvas — fills container */}
+        {/* Three.js canvas — fills container */}
         <div className="absolute inset-0">
-          <RNAModel />
+          <CancerImmunologyModel />
         </div>
 
-        {/* Top-left corner: nucleotide type legend */}
+        {/* Top-left: cell type legend */}
         <div className="absolute top-4 left-4 pointer-events-none">
           <div className="flex flex-col gap-1.5">
             {[
-              { label: "Adenine", color: "#9B8EF0" },
-              { label: "Uracil", color: "#81BEFF" },
-              { label: "Guanine", color: "#6FCF97" },
-              { label: "Cytosine", color: "#FFAB91" },
-            ].map((base) => (
-              <div key={base.label} className="flex items-center gap-1.5">
+              { label: "Tumor Cell",  color: "#F87171" },
+              { label: "CTL / T-Cell", color: "#9B8EF0" },
+              { label: "NK Cell",     color: "#6BA8FF" },
+              { label: "Cytokines",   color: "#6EE7B7" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-1.5">
                 <div
                   className="w-1.5 h-1.5 rounded-full"
-                  style={{ background: base.color }}
+                  style={{ background: item.color }}
                 />
                 <span
                   className="font-mono text-[8px] uppercase tracking-widest"
                   style={{ color: "rgba(200,195,255,0.55)" }}
                 >
-                  {base.label}
+                  {item.label}
                 </span>
               </div>
             ))}
@@ -103,11 +106,11 @@ export default function SplinePlaceholder() {
             animate={{ opacity: [1, 0.3, 1] }}
             transition={{ duration: 1.6, repeat: Infinity }}
             className="w-1.5 h-1.5 rounded-full"
-            style={{ background: "#6FCF97" }}
+            style={{ background: "#6EE7B7" }}
           />
           <span
             className="font-mono text-[8px] uppercase tracking-widest"
-            style={{ color: "rgba(111,207,151,0.7)" }}
+            style={{ color: "rgba(110,231,183,0.7)" }}
           >
             Live 3D
           </span>
@@ -126,13 +129,13 @@ export default function SplinePlaceholder() {
               className="font-mono text-[10px] uppercase tracking-widest font-semibold"
               style={{ color: "#9B8EF0" }}
             >
-              RNA Double Helix
+              Cancer Immune Attack
             </p>
             <p
               className="font-mono text-[9px] mt-0.5"
               style={{ color: "rgba(155,142,240,0.5)" }}
             >
-              A-form · 2.5 turns · 28 base pairs
+              CTL + NK cell · tumour lysis
             </p>
           </div>
 
