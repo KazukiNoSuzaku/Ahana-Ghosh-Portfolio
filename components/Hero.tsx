@@ -184,9 +184,8 @@ export default function Hero() {
               className="flex items-center gap-8 pt-4 border-t border-[#E8E8F4]"
             >
               {[
-                { value: "4+", label: "Publications" },
+                { value: "2", label: "Publications" },
                 { value: "3", label: "Institutions" },
-                { value: "5+", label: "Years Research" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <p
