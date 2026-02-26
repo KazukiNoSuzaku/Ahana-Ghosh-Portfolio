@@ -52,7 +52,7 @@ export default function Hero() {
                   className="w-1.5 h-1.5 rounded-full animate-pulse"
                   style={{ background: "#7C6EE6" }}
                 />
-                PhD Researcher · Biomedical Sciences
+                PhD Researcher · School of Molecular Biosciences
               </span>
             </motion.div>
 
@@ -83,7 +83,7 @@ export default function Hero() {
                   color: "#1A1A2E",
                 }}
               >
-                Biomedical Sciences Researcher
+                School of Molecular Biosciences
                 <span
                   className="inline-block mx-2 w-1.5 h-1.5 rounded-full align-middle"
                   style={{ background: "linear-gradient(135deg, #7C6EE6, #6BA8FF)" }}

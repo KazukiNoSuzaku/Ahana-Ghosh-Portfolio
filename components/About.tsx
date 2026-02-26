@@ -106,7 +106,7 @@ export default function About() {
           <div className="grid grid-cols-2 gap-2.5 pt-4">
             {[
               { label: "Degree", value: "PhD Candidate", color: "violet" },
-              { label: "Program", value: "Biomedical Sci.", color: "sky" },
+              { label: "Program", value: "Mol. Biosciences", color: "sky" },
               { label: "Specialty", value: "Cancer Immunology", color: "mint" },
               { label: "Status", value: "Active Research", color: "peach" },
             ].map((item) => {
@@ -227,7 +227,7 @@ export default function About() {
             <div className="space-y-3">
               {[
                 {
-                  degree: "PhD, Biomedical Sciences",
+                  degree: "PhD, Molecular Biosciences",
                   institution: "University of Glasgow",
                   period: "2021 – Present",
                   focus: "Cancer Immunology & Tumor Microenvironment",
