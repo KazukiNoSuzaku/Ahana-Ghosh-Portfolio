@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import SplinePlaceholder from "./SplinePlaceholder";
 import { personal } from "@/lib/data";
@@ -13,6 +14,8 @@ import {
 } from "@/lib/animations";
 
 export default function Hero() {
+  const [showAllInterests, setShowAllInterests] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden hero-gradient pt-[72px]">
       {/* Background ambient blobs */}
@@ -109,29 +112,37 @@ export default function Hero() {
 
             {/* Research interests chips */}
             <motion.div variants={heroCta} className="flex flex-wrap gap-2">
-              {personal.interests.slice(0, 3).map((interest) => (
-                <span
-                  key={interest}
-                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium"
+              {personal.interests
+                .slice(0, showAllInterests ? undefined : 3)
+                .map((interest) => (
+                  <span
+                    key={interest}
+                    className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium"
+                    style={{
+                      background: "rgba(124,110,230,0.07)",
+                      border: "1px solid rgba(124,110,230,0.15)",
+                      color: "#7C6EE6",
+                    }}
+                  >
+                    {interest}
+                  </span>
+                ))}
+              {personal.interests.length > 3 && (
+                <button
+                  onClick={() => setShowAllInterests(!showAllInterests)}
+                  className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all duration-150"
                   style={{
-                    background: "rgba(124,110,230,0.07)",
-                    border: "1px solid rgba(124,110,230,0.15)",
-                    color: "#7C6EE6",
+                    background: "rgba(107,168,255,0.07)",
+                    border: "1px solid rgba(107,168,255,0.2)",
+                    color: "#4B88DF",
+                    cursor: "pointer",
                   }}
                 >
-                  {interest}
-                </span>
-              ))}
-              <span
-                className="px-3 py-1.5 rounded-lg text-xs font-mono font-medium"
-                style={{
-                  background: "rgba(107,168,255,0.07)",
-                  border: "1px solid rgba(107,168,255,0.2)",
-                  color: "#4B88DF",
-                }}
-              >
-                +{personal.interests.length - 3} more
-              </span>
+                  {showAllInterests
+                    ? "Show less"
+                    : `+${personal.interests.length - 3} more`}
+                </button>
+              )}
             </motion.div>
 
             {/* CTA Buttons */}
