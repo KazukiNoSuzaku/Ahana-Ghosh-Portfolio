@@ -32,6 +32,27 @@ My focus centres on the immunological circuits that govern anti-tumour responses
 
 export const researchExperiences = [
   {
+    id: "r0",
+    title: "MRes Research Project",
+    lab: "Seth Coffelt Lab",
+    institution: "University of Glasgow",
+    location: "Glasgow, UK",
+    duration: "Jan 2026 – Jul 2026",
+    type: "MRes Research",
+    description:
+      "Investigating the role of intraepithelial lymphocyte (IEL) gamma delta T cells in gut and colon cancer within the Coffelt Lab. Examining how γδ T cells in the intestinal epithelium respond to tumour development and their potential as immunotherapeutic targets in colorectal cancer.",
+    achievements: [],
+    techniques: [
+      "Flow cytometry & FACS",
+      "Immunofluorescence",
+      "Mouse tumour models",
+      "Cell culture",
+      "ELISA",
+    ],
+    tags: ["Cancer Immunology", "γδ T cells", "Colorectal Cancer", "MRes"],
+    color: "violet",
+  },
+  {
     id: "r1",
     title: "Graduate Research Fellow",
     lab: "Tumor Immunology & Checkpoint Biology Lab",
