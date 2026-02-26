@@ -238,6 +238,8 @@ export const skillCategories = [
       "ELISA",
       "Immunoprecipitation",
       "Retroviral Transduction",
+      "3D Organoid Culture",
+      "2D Organoid Culture",
     ],
   },
   {
