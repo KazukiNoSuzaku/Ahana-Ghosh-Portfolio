@@ -227,7 +227,7 @@ export default function About() {
             <div className="space-y-3">
               {[
                 {
-                  degree: "PhD, Molecular Biosciences",
+                  degree: "PhD, MRC DTP Precision Medicine",
                   institution: "University of Glasgow",
                   period: "2021 – Present",
                   focus: "Cancer Immunology & Tumor Microenvironment",
@@ -235,12 +235,28 @@ export default function About() {
                   bg: "rgba(124,110,230,0.06)",
                 },
                 {
-                  degree: "B.S., Molecular Biology (Honors)",
-                  institution: "University of California, San Diego",
-                  period: "2016 – 2020",
-                  focus: "Cancer Genomics & Epigenetics",
+                  degree: "MRes, Biomedical Sciences",
+                  institution: "University of Glasgow",
+                  period: "2020 – 2021",
+                  focus: "",
+                  color: "#9B8EF0",
+                  bg: "rgba(155,142,240,0.06)",
+                },
+                {
+                  degree: "MSc, Biotechnology",
+                  institution: "Christ University",
+                  period: "",
+                  focus: "",
                   color: "#4B88DF",
                   bg: "rgba(107,168,255,0.06)",
+                },
+                {
+                  degree: "BSc, Biotechnology, Chemistry & Botany",
+                  institution: "Christ University",
+                  period: "",
+                  focus: "",
+                  color: "#6BA8FF",
+                  bg: "rgba(107,168,255,0.04)",
                 },
               ].map((edu, i) => (
                 <motion.div
@@ -269,15 +285,23 @@ export default function About() {
                     >
                       {edu.institution}
                     </p>
-                    <div className="flex items-center gap-3 mt-1.5 flex-wrap">
-                      <span className="font-mono text-[10px] text-[#9CA3AF]">
-                        {edu.period}
-                      </span>
-                      <span className="w-1 h-1 rounded-full bg-[#E8E8F4]" />
-                      <span className="text-[#9CA3AF] text-[10px]">
-                        {edu.focus}
-                      </span>
-                    </div>
+                    {(edu.period || edu.focus) && (
+                      <div className="flex items-center gap-3 mt-1.5 flex-wrap">
+                        {edu.period && (
+                          <span className="font-mono text-[10px] text-[#9CA3AF]">
+                            {edu.period}
+                          </span>
+                        )}
+                        {edu.period && edu.focus && (
+                          <span className="w-1 h-1 rounded-full bg-[#E8E8F4]" />
+                        )}
+                        {edu.focus && (
+                          <span className="text-[#9CA3AF] text-[10px]">
+                            {edu.focus}
+                          </span>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
