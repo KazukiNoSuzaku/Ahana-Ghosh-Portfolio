@@ -53,6 +53,26 @@ export const researchExperiences = [
     color: "violet",
   },
   {
+    id: "r0b",
+    title: "MSc Research Project",
+    lab: "Bose Institute",
+    institution: "Bose Institute",
+    location: "India",
+    duration: "Jan 2025 – Apr 2025",
+    type: "MSc Research",
+    description:
+      "Investigated the role of regulatory B cells (Bregs) in breast cancer, examining how Breg-mediated immunosuppression contributes to tumour immune evasion and disease progression.",
+    achievements: [],
+    techniques: [
+      "Flow cytometry & FACS",
+      "Cell culture",
+      "ELISA",
+      "Immunofluorescence",
+    ],
+    tags: ["Cancer Immunology", "Breg cells", "Breast Cancer", "MSc"],
+    color: "sky",
+  },
+  {
     id: "r1",
     title: "Graduate Research Fellow",
     lab: "Tumor Immunology & Checkpoint Biology Lab",
