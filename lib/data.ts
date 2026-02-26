@@ -142,6 +142,21 @@ export const researchExperiences = [
     tags: ["Epigenomics", "Breast Cancer", "Bioinformatics"],
     color: "mint",
   },
+  {
+    id: "r4",
+    title: "BSc Internship",
+    lab: "Indian Statistical Institute",
+    institution: "Indian Statistical Institute",
+    location: "India",
+    duration: "May 2023 – Jun 2023",
+    type: "BSc Internship",
+    description:
+      "Internship focused on single-cell ATAC sequencing (scATAC-seq), gaining hands-on experience in chromatin accessibility profiling and computational analysis of single-cell epigenomic data.",
+    achievements: [],
+    techniques: ["scATAC-seq", "Chromatin accessibility profiling", "Bioinformatics"],
+    tags: ["scATAC-seq", "Epigenomics", "BSc", "Internship"],
+    color: "peach",
+  },
 ];
 
 export const publications = [
