@@ -14,7 +14,7 @@ My focus centres on the immunological circuits that govern anti-tumour responses
     "PhD researcher in Biomedical Sciences specializing in Cancer Immunology, tumor microenvironment biology, and translational oncology.",
   institution: "University of Glasgow",
   department: "School of Infection & Immunity",
-  email: "ahana.ghosh@glasgow.ac.uk",
+  email: "ahana2015ghosh@gmail.com",
   linkedin: "https://linkedin.com/in/ahana-ghosh",
   googleScholar: "https://scholar.google.com/citations?user=placeholder",
   researchGate: "https://researchgate.net/profile/Ahana-Ghosh",
