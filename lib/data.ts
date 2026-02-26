@@ -9,7 +9,7 @@ export const personal = {
     "Decoding the language of tumor immunity — from bench to bedside insights.",
   bio: `I am a PhD researcher in Biomedical Sciences with a deep focus on Cancer Immunology and the tumor microenvironment. My work sits at the intersection of basic immunology and translational oncology, where I investigate how tumors evade immune surveillance and how we can engineer more effective immunotherapeutic strategies.
 
-With expertise spanning wet lab techniques, bioinformatics, and advanced microscopy, I am committed to bridging molecular discoveries with clinical relevance — ultimately contributing to the next generation of precision cancer treatments.`,
+My focus centres on the immunological circuits that govern anti-tumour responses — from the functional exhaustion of cytotoxic T-cells to the suppressive checkpoint networks that shield tumours from immune destruction. Using experimental immunology as my primary lens, I work to uncover how these pathways can be therapeutically reversed, with the goal of translating mechanistic discoveries into more effective and durable cancer immunotherapies.`,
   bioShort:
     "PhD researcher in Biomedical Sciences specializing in Cancer Immunology, tumor microenvironment biology, and translational oncology.",
   institution: "University of Glasgow",
