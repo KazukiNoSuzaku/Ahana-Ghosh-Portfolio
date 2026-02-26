@@ -21,7 +21,8 @@ My focus centres on the immunological circuits that govern anti-tumour responses
   orcid: "0000-0000-0000-0000",
   interests: [
     "Tumor Microenvironment",
-    "T-cell Exhaustion",
+    "T-cell Biology",
+    "Treg Biology",
     "Immune Checkpoint Biology",
     "Translational Oncology",
     "Single-cell Genomics",
