@@ -36,6 +36,10 @@ export const metadata: Metadata = {
     "Oncology",
   ],
   authors: [{ name: "Ahana Ghosh" }],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
