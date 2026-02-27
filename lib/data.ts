@@ -15,7 +15,7 @@ My focus centres on the immunological circuits that govern anti-tumour responses
   institution: "University of Glasgow",
   department: "School of Infection & Immunity",
   email: "3177321g@student.gla.ac.uk",
-  linkedin: "https://linkedin.com/in/ahana-ghosh",
+  linkedin: "https://www.linkedin.com/in/ahana-ghosh-b5a14a254/",
   googleScholar: "https://scholar.google.com/citations?user=placeholder",
   researchGate: "https://researchgate.net/profile/Ahana-Ghosh",
   orcid: "0000-0000-0000-0000",
