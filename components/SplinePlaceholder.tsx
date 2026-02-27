@@ -129,13 +129,13 @@ export default function SplinePlaceholder() {
               className="font-mono text-[10px] uppercase tracking-widest font-semibold"
               style={{ color: "#9B8EF0" }}
             >
-              Cancer Immune Attack
+              Tumour Immune Lysis
             </p>
             <p
               className="font-mono text-[9px] mt-0.5"
               style={{ color: "rgba(155,142,240,0.5)" }}
             >
-              CTL + NK cell · tumour lysis
+              CTL approach · synapse · apoptosis
             </p>
           </div>
 
